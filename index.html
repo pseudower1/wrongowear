@@ -7,12 +7,13 @@
 
     <style>
         :root {
-            --bg: #0f172a;
-            --panel: #020617;
-            --text: #e5e7eb;
-            --muted: #94a3b8;
+            --bg-main: #020617;
+            --bg-accent: #0f172a;
+            --panel: rgba(15, 23, 42, 0.75);
+            --border: rgba(148, 163, 184, 0.15);
+            --text-main: #e5e7eb;
+            --text-muted: #94a3b8;
             --accent: #38bdf8;
-            --border: #1e293b;
         }
 
         * {
@@ -21,67 +22,90 @@
 
         body {
             margin: 0;
+            min-height: 100vh;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: radial-gradient(circle at top, #020617, #000);
-            color: var(--text);
-            line-height: 1.6;
+            color: var(--text-main);
+            background:
+                radial-gradient(800px circle at 15% 10%, rgba(56,189,248,0.15), transparent 40%),
+                radial-gradient(600px circle at 85% 30%, rgba(99,102,241,0.15), transparent 45%),
+                linear-gradient(180deg, var(--bg-accent), var(--bg-main));
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 4rem 1.5rem;
+            padding: 5rem 1.5rem 3rem;
         }
 
         header {
+            text-align: center;
             margin-bottom: 4rem;
         }
 
+        .badge {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent);
+            font-size: 0.75rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 1.5rem;
+        }
+
         h1 {
-            font-size: 3rem;
-            margin: 0 0 0.5rem 0;
+            font-size: clamp(2.8rem, 6vw, 4rem);
+            margin: 0 0 1rem;
             letter-spacing: -0.04em;
         }
 
         .tagline {
-            font-size: 1.1rem;
-            color: var(--muted);
-            max-width: 600px;
+            max-width: 720px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: var(--text-muted);
         }
 
-        .panel {
-            background: linear-gradient(180deg, var(--panel), #000);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .panel h2 {
-            margin-top: 0;
-            font-size: 1.3rem;
-        }
-
-        .panel p {
-            color: var(--muted);
-            margin-bottom: 0;
-        }
-
-        .grid {
+        .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .card {
+            background: var(--panel);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--text-muted);
         }
 
         footer {
-            margin-top: 4rem;
+            margin-top: 5rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border);
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
             justify-content: space-between;
-            align-items: center;
+            gap: 1rem;
             font-size: 0.9rem;
         }
 
@@ -93,55 +117,43 @@
         footer a:hover {
             text-decoration: underline;
         }
-
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.6rem;
-            border-radius: 999px;
-            background: rgba(56, 189, 248, 0.15);
-            color: var(--accent);
-            font-size: 0.75rem;
-            margin-bottom: 1rem;
-        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <header>
-            <span class="badge">Developer Project</span>
+            <span class="badge">AUTOMATION PLATFORM</span>
             <h1>wrongowear</h1>
             <p class="tagline">
-                Automation tooling for publishing and managing digital content
-                across social media platforms.
+                Infrastructure for automating the publishing, scheduling, and
+                management of digital advertising and media content across
+                social platforms.
             </p>
         </header>
 
-        <section class="grid">
-            <div class="panel">
-                <h2>What it does</h2>
+        <section class="cards">
+            <div class="card">
+                <h2>Content automation</h2>
                 <p>
-                    wrongowear provides programmatic workflows for uploading,
-                    scheduling, and managing media content using official
-                    platform APIs.
+                    Programmatic workflows for uploading and managing video
+                    content using official platform APIs.
                 </p>
             </div>
 
-            <div class="panel">
-                <h2>How it works</h2>
+            <div class="card">
+                <h2>Multi-platform ready</h2>
                 <p>
-                    The system integrates with supported platforms when access
-                    is explicitly authorized, enabling automated content
-                    publishing through custom scripts and tooling.
+                    Designed to integrate with multiple social media platforms,
+                    including TikTok, as additional APIs are supported.
                 </p>
             </div>
 
-            <div class="panel">
-                <h2>Platform integrations</h2>
+            <div class="card">
+                <h2>Developer-first</h2>
                 <p>
-                    wrongowear may integrate with third-party platforms,
-                    including TikTok and other social networks, in accordance
-                    with their published API terms.
+                    Built around scripts and tooling that prioritize control,
+                    flexibility, and platform compliance.
                 </p>
             </div>
         </section>
