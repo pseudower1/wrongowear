@@ -1,32 +1,161 @@
-<h1>wrongowear</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>wrongowear</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<p>
-    wrongowear is a personal software project focused on automating the
-    publishing and management of digital content across social media platforms.
-</p>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --panel: #020617;
+            --text: #e5e7eb;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: #1e293b;
+        }
 
-<p>
-    The application supports programmatic video uploads, scheduling, and
-    content workflows using platform-provided APIs and custom scripts.
-</p>
+        * {
+            box-sizing: border-box;
+        }
 
-<p>
-    wrongowear may integrate with third-party platforms, including TikTok,
-    when access is explicitly authorized by the account owner.
-</p>
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #020617, #000);
+            color: var(--text);
+            line-height: 1.6;
+        }
 
-<p>
-    wrongowear is an independent project and is not affiliated with or endorsed
-    by any social media platform.
-</p>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
 
-<p>
-    Contact: <a href="mailto:contact@wrongowear.dev">contact@wrongowear.dev</a>
-</p>
+        header {
+            margin-bottom: 4rem;
+        }
 
-<footer>
-    <p>
-        <a href="/privacy.html">Privacy Policy</a> |
-        <a href="/terms.html">Terms of Service</a>
-    </p>
-</footer>
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: -0.04em;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--muted);
+            max-width: 600px;
+        }
+
+        .panel {
+            background: linear-gradient(180deg, var(--panel), #000);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .panel h2 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .panel p {
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent);
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <span class="badge">Developer Project</span>
+            <h1>wrongowear</h1>
+            <p class="tagline">
+                Automation tooling for publishing and managing digital content
+                across social media platforms.
+            </p>
+        </header>
+
+        <section class="grid">
+            <div class="panel">
+                <h2>What it does</h2>
+                <p>
+                    wrongowear provides programmatic workflows for uploading,
+                    scheduling, and managing media content using official
+                    platform APIs.
+                </p>
+            </div>
+
+            <div class="panel">
+                <h2>How it works</h2>
+                <p>
+                    The system integrates with supported platforms when access
+                    is explicitly authorized, enabling automated content
+                    publishing through custom scripts and tooling.
+                </p>
+            </div>
+
+            <div class="panel">
+                <h2>Platform integrations</h2>
+                <p>
+                    wrongowear may integrate with third-party platforms,
+                    including TikTok and other social networks, in accordance
+                    with their published API terms.
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            <div>
+                <a href="/privacy.html">Privacy Policy</a> ·
+                <a href="/terms.html">Terms of Service</a>
+            </div>
+            <div>
+                Contact:
+                <a href="mailto:contact@wrongowear.dev">contact@wrongowear.dev</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
