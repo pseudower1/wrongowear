@@ -36,15 +36,12 @@
         }
 
         .login-card {
-            position: relative;
-            z-index: 10;
             width: 100%;
             max-width: 420px;
             background: var(--panel);
             border: 1px solid var(--border);
             border-radius: 18px;
             padding: 2.5rem;
-            pointer-events: auto;
         }
 
         h1 {
@@ -76,7 +73,6 @@
             background-color: #020617;
             color: var(--text-main);
             font-size: 0.9rem;
-            pointer-events: auto;
         }
 
         input:focus {
@@ -94,7 +90,6 @@
             font-weight: 600;
             font-size: 0.95rem;
             cursor: pointer;
-            pointer-events: auto;
         }
 
         .error {
@@ -105,11 +100,29 @@
             font-size: 0.85rem;
         }
 
+        .access-note {
+            margin-top: 1.75rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .access-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .access-note a:hover {
+            text-decoration: underline;
+        }
+
         .footer {
             margin-top: 2rem;
             text-align: center;
             font-size: 0.8rem;
-            color: var(--text-muted);
         }
 
         .footer a {
@@ -140,6 +153,14 @@
 
         <div id="errorMessage" class="error">
             Incorrect credentials
+        </div>
+
+        <div class="access-note">
+            <strong>Access requests</strong><br />
+            Authentication is enabled on a limited basis.<br />
+            To request access, email
+            <a href="mailto:alexcoker505@gmail.com">alexcoker505@gmail.com</a>
+            with a brief description of your intended use.
         </div>
 
         <div class="footer">
