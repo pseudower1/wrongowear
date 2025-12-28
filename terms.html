@@ -1,22 +1,134 @@
-<h1>Terms of Service</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Terms of Service · wrongowear</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<p><strong>Last updated:</strong> December 27, 2025</p>
+    <style>
+        :root {
+            --bg-main: #020617;
+            --bg-accent: #0f172a;
+            --panel: rgba(15, 23, 42, 0.9);
+            --border: rgba(148, 163, 184, 0.18);
+            --text-main: #e5e7eb;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+        }
 
-<p>
-    By using wrongowear, you agree to the following terms:
-</p>
+        * {
+            box-sizing: border-box;
+        }
 
-<ul>
-    <li>The App is provided "as is" without warranties of any kind</li>
-    <li>You authorize the App to interact with connected accounts via
-        official platform APIs</li>
-    <li>You are responsible for ensuring that your use of the App complies
-        with applicable platform terms, policies, and community guidelines</li>
-    <li>wrongowear may modify or suspend access to features if misuse or abuse
-        is detected</li>
-</ul>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text-main);
+            background:
+                radial-gradient(800px circle at 15% 10%, rgba(56,189,248,0.15), transparent 40%),
+                radial-gradient(600px circle at 85% 30%, rgba(99,102,241,0.15), transparent 45%),
+                linear-gradient(180deg, var(--bg-accent), var(--bg-main));
+        }
 
-<p>
-    wrongowear is an independent project and is not affiliated with or endorsed
-    by any third-party platform.
-</p>
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem 3rem;
+        }
+
+        .policy-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 2.75rem;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 2.2rem;
+            letter-spacing: -0.03em;
+        }
+
+        .updated {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0.75rem 0;
+        }
+
+        ul {
+            margin: 1rem 0 1rem 1.25rem;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="policy-card">
+            <h1>Terms of Service</h1>
+            <div class="updated"><strong>Last updated:</strong> December 27, 2025</div>
+
+            <p>
+                By using wrongowear, you agree to the following terms:
+            </p>
+
+            <ul>
+                <li>
+                    The App is provided “as is” without warranties of any kind
+                </li>
+                <li>
+                    You authorize the App to interact with connected accounts via
+                    official platform APIs
+                </li>
+                <li>
+                    You are responsible for ensuring that your use of the App
+                    complies with applicable platform terms, policies, and
+                    community guidelines
+                </li>
+                <li>
+                    wrongowear may modify or suspend access to features if misuse
+                    or abuse is detected
+                </li>
+            </ul>
+
+            <p>
+                wrongowear is an independent project and is not affiliated with or
+                endorsed by any third-party platform.
+            </p>
+
+            <div class="footer">
+                <a href="/">← Back to home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
