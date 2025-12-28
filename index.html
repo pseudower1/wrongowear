@@ -34,12 +34,18 @@
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 5rem 1.5rem 3rem;
+            padding: 4rem 1.5rem 3rem;
         }
 
         header {
-            text-align: center;
             margin-bottom: 4rem;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
         }
 
         .badge {
@@ -50,27 +56,54 @@
             color: var(--accent);
             font-size: 0.75rem;
             letter-spacing: 0.04em;
-            margin-bottom: 1.5rem;
+        }
+
+        .login-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
         }
 
         h1 {
+            text-align: center;
             font-size: clamp(2.8rem, 6vw, 4rem);
             margin: 0 0 1rem;
             letter-spacing: -0.04em;
         }
 
         .tagline {
+            text-align: center;
             max-width: 720px;
             margin: 0 auto;
             font-size: 1.15rem;
             color: var(--text-muted);
         }
 
+        .cta {
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 0.8rem 1.6rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #38bdf8, #6366f1);
+            color: #020617;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 2rem;
-            margin-top: 4rem;
+            margin-top: 4.5rem;
         }
 
         .card {
@@ -123,13 +156,21 @@
 <body>
     <div class="container">
         <header>
-            <span class="badge">AUTOMATION PLATFORM</span>
+            <div class="topbar">
+                <span class="badge">AUTOMATION PLATFORM</span>
+                <a class="login-link" href="/login.html">Login</a>
+            </div>
+
             <h1>wrongowear</h1>
             <p class="tagline">
                 Infrastructure for automating the publishing, scheduling, and
                 management of digital advertising and media content across
                 social platforms.
             </p>
+
+            <div class="cta">
+                <a href="/login.html">Access Platform</a>
+            </div>
         </header>
 
         <section class="cards">
