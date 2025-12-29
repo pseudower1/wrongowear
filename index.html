@@ -99,6 +99,55 @@
             font-size: 0.95rem;
         }
 
+        /* Slideshow styles */
+        .slideshow-container {
+            margin: 4rem 0;
+            position: relative;
+            max-width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            border-radius: 16px;
+        }
+
+        .slide.active {
+            display: block;
+            animation: fade 1s ease-in-out;
+        }
+
+        @keyframes fade {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 0.75rem;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.8rem;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.4);
+            user-select: none;
+            transition: background 0.3s;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .prev { left: 15px; }
+        .next { right: 15px; }
+
+        /* Cards */
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -173,6 +222,16 @@
             </div>
         </header>
 
+        <!-- Slideshow Section -->
+        <section class="slideshow-container">
+            <img class="slide active" src="images/work1.jpg" alt="Project 1">
+            <img class="slide" src="images/work2.jpg" alt="Project 2">
+            <img class="slide" src="images/work3.jpg" alt="Project 3">
+
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+        </section>
+
         <section class="cards">
             <div class="card">
                 <h2>Content automation</h2>
@@ -210,5 +269,31 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        let slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        });
+
+        document.querySelector('.next').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        });
+
+        // Optional: auto-slide every 5 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }, 5000);
+    </script>
 </body>
 </html>
